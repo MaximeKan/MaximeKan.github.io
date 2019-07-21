@@ -21,7 +21,7 @@
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="https://MaximeKan.github.io/movie_review_classification_linear_model.html">Movie review classification - Linear Model</a></h1>
+                    <h1 class="entry-title"><a href="https://MaximeKan.github.io/movie_review_classification_part1.html">Movie review classification - Part 1</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2019-02-06T00:00:00+01:00">
                 Published: Wed 06 February 2019
@@ -1215,13 +1215,14 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">string</span>
 
 <span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="k">import</span> <span class="n">imdb</span>
 
@@ -1250,6 +1251,17 @@ h6:hover .anchor-link {
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>Using TensorFlow backend.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>[nltk_data] Downloading package stopwords to /root/nltk_data...
 [nltk_data]   Package stopwords is already up-to-date!
@@ -1263,7 +1275,7 @@ h6:hover .anchor-link {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">),</span> <span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">)</span> <span class="o">=</span> <span class="n">imdb</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">num_words</span><span class="o">=</span><span class="mi">3000</span><span class="p">)</span>
@@ -1271,27 +1283,6 @@ h6:hover .anchor-link {
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading data from https://s3.amazonaws.com/text-datasets/imdb.npz
-17465344/17464789 [==============================] - 0s 0us/step
-Downloading data from https://s3.amazonaws.com/text-datasets/imdb_word_index.json
-1646592/1641221 [==============================] - 0s 0us/step
-</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -1320,7 +1311,7 @@ Downloading data from https://s3.amazonaws.com/text-datasets/imdb_word_index.jso
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -1400,7 +1391,7 @@ Downloading data from https://s3.amazonaws.com/text-datasets/imdb_word_index.jso
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;label: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">train_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -1470,7 +1461,7 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Number of positive reviews in the train data: </span><span class="si">%i</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">train_labels</span><span class="o">==</span><span class="mi">1</span><span class="p">))</span>
@@ -1518,7 +1509,7 @@ Number of negative reviews in the train data: 12500
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">length_reviews</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="nb">len</span><span class="p">(</span><span class="n">review</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">train_data</span><span class="p">])</span>
@@ -1545,8 +1536,8 @@ Number of negative reviews in the train data: 12500
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAeoAAAFZCAYAAABXM2zhAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
-AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4yLCBo
-dHRwOi8vbWF0cGxvdGxpYi5vcmcvOIA7rQAAIABJREFUeJzt3Xtc1XWex/H34XIkCtJDHMvGmmnK
+AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4zLCBo
+dHRwOi8vbWF0cGxvdGxpYi5vcmcvnQurowAAIABJREFUeJzt3Xtc1XWex/H34XIkCtJDHMvGmmnK
 S4W3NBS1whuXcsQSH8kDrc0ubmbORCrTuF3GbSWVckxbJ8tgK5OktiFXkUqczRGZ7BRZW1O2j2ks
 DM8BFOQiiN/9w0dnNZEDcoBf+Hr+Fb/L9/f9fvjlm+/3dy42Y4wRAACwpICu7gAAADgzghoAAAsj
 qAEAsDCCGgAACyOoAQCwMIIaAAALI6jRrP79++v777/v8Ot4PB699957kqRvv/1WV199dbvaq66u
@@ -1758,7 +1749,7 @@ ObIAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;On average, there are </span><span class="si">%i</span><span class="s1"> words in negative reviews&#39;</span> <span class="o">%</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">length_reviews</span><span class="p">[</span><span class="n">train_labels</span> <span class="o">==</span><span class="mi">0</span><span class="p">]))</span>
@@ -1962,7 +1953,7 @@ On average, there are 240 words in positive reviews
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">stemmer</span> <span class="o">=</span> <span class="n">SnowballStemmer</span><span class="p">(</span><span class="s2">&quot;english&quot;</span><span class="p">)</span>
@@ -2092,7 +2083,7 @@ On average, there are 240 words in positive reviews
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">scoring</span> <span class="o">=</span> <span class="s1">&#39;accuracy&#39;</span><span class="p">,</span> <span class="n">cv</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">return_train_score</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
@@ -2109,7 +2100,7 @@ On average, there are 240 words in positive reviews
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[22]:</div>
+    <div class="prompt output_prompt">Out[21]:</div>
 
 
 
@@ -2136,7 +2127,7 @@ On average, there are 240 words in positive reviews
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_score_non_stemmed</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_score_</span>
@@ -2177,7 +2168,7 @@ It is achieved for the following parameters:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[97]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">best_params_non_stemmed</span> <span class="o">=</span> <span class="n">grid</span><span class="o">.</span><span class="n">best_params_</span>
@@ -2194,7 +2185,7 @@ It is achieved for the following parameters:</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[97]:</div>
+    <div class="prompt output_prompt">Out[23]:</div>
 
 
 
@@ -2260,7 +2251,7 @@ It is achieved for the following parameters:</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[99]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">grid_results</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">grid</span><span class="o">.</span><span class="n">cv_results_</span><span class="p">)</span>
@@ -2291,12 +2282,24 @@ It is achieved for the following parameters:</p>
     <div class="prompt"></div>
 
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>/usr/local/lib/python3.6/dist-packages/seaborn/categorical.py:454: FutureWarning: remove_na is deprecated and is a private function. Do not use.
+  box_data = remove_na(group_data)
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
 
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA4IAAAKUCAYAAABR8YZTAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
-AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4yLCBo
-dHRwOi8vbWF0cGxvdGxpYi5vcmcvOIA7rQAAIABJREFUeJzs3Xl4FHW69vG7sxIIS+IkiIjCsMhM
+AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4zLCBo
+dHRwOi8vbWF0cGxvdGxpYi5vcmcvnQurowAAIABJREFUeJzs3Xl4FHW69vG7sxIIS+IkiIjCsMhM
 kDWskVVAISByFAiCgAQRRVFHEQijuIELg6+CqKjoOMhoYERE1IAL4syRQ9ABNFEU4rArSSBA9q1/
 7x8c+hCFpEOodCX1/VwX10V1dVU9XVV9dz+ppV3GGCMAAAAAgGP4+boAAAAAAED1ohEEAAAAAIeh
 EQQAAAAAh6ERBAAAAACHoREEAAAAAIehEQQAAAAAh6ERBAAfu+KKK5SUlCRJmjx5shYsWHDO5958
@@ -2996,7 +2999,7 @@ AElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">cross_val_stemmed_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">cross_val_stemmed</span><span class="p">[</span><span class="s1">&#39;test_score&#39;</span><span class="p">])</span>
@@ -3079,7 +3082,7 @@ Stemming has increased our prediction accuracy!
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[108]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#All credits for this plot go to Prof A. Mueller, who teaches Applied Machine Learning at Columbia University</span>
@@ -3115,7 +3118,7 @@ Stemming has increased our prediction accuracy!
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[108]:</div>
+    <div class="prompt output_prompt">Out[29]:</div>
 
 
 
@@ -3135,8 +3138,8 @@ Stemming has increased our prediction accuracy!
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA2UAAAGXCAYAAAAzs/hoAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
-AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4yLCBo
-dHRwOi8vbWF0cGxvdGxpYi5vcmcvOIA7rQAAIABJREFUeJzs3Xd8FOXa//HvphEgEFIgofdy6C0g
+AAALEgAACxIB0t1+/AAAADl0RVh0U29mdHdhcmUAbWF0cGxvdGxpYiB2ZXJzaW9uIDMuMC4zLCBo
+dHRwOi8vbWF0cGxvdGxpYi5vcmcvnQurowAAIABJREFUeJzs3Xd8FOXa//HvphEgEFIgofdy6C0g
 IEVaEkAUbEeKiMfnKI/lB6gIIk1RAeEgHpoIShcIIE0gkNClGXqRYmiB0EIKCQRSdn9/8Mo+CTXZ
 3ThAPu+/YHfn2mtmZ3fnO/e9E5PFYrEIAAAAAGAIJ6MbAAAAAIC8jFAGAAAAAAYilAEAAACAgQhl
 AAAAAGAgQhkAAAAAGIhQBgAAAAAGIpQB+FsNGzZMQUFBCgoKUo0aNfTcc89Z/5+UlOSQ51i/fr06
@@ -3879,91 +3882,14 @@ EAShG4mgTBAEQRAEQRAEoRv9P2QAiHcdZL6uAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Before wrapping it up, let us discuss the main downfall of this model (because yes, it has some...). Here are four reviews:</p>
+<p>Before wrapping it up, let us discuss the main downfall of this model (because yes, it has some...). Here are two reviews:</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[0]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reviews</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;i loved this movie it was amazing&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;i hated this movie it was absolutely awful&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;this movie was not bad at all&quot;</span><span class="p">,</span>
-           <span class="s2">&quot;i did not love this movie at all&quot;</span><span class="p">]</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The first two reviews are straightforward. But the last two reviews are expressed with a negation, which is something that we commonly do in language.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[147]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pipe_best</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">stemming</span><span class="p">(</span><span class="n">reviews</span><span class="p">))</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[147]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>array([[0.02691319, 0.97308681],
-       [0.99416925, 0.00583075],
-       [0.98125414, 0.01874586],
-       [0.50134545, 0.49865455]])</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Our classifier correctly classifies the first two reviews with a very high level of confidence (97.3% and 99.4%). However, it does not manage to identify what is happening in the last two. The third review is labeled as negative with 98.1% probability because of the word "bad", and the fourth review is only labeled as negative with 50.1% probability, mainly because of the word "love".</p>
-<p>This illustrates that our model is only looking at word blocks, but is not able to retrieve any semantic from the syntax of the reviews.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Testing-the-model">Testing the model<a class="anchor-link" href="#Testing-the-model">&#182;</a></h3><p>In the previous steps, we have evaluated our model using cross validation. This has allowed to identify what modeling steps yielded the best results. Now, let us see how our model performs with reviews from the test set.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[109]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">pipe_best</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_reviews_stemmed</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">)</span>
@@ -3979,7 +3905,7 @@ EAShG4mgTBAEQRAEQRAEoRv9P2QAiHcdZL6uAAAAAElFTkSuQmCC
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[109]:</div>
+    <div class="prompt output_prompt">Out[30]:</div>
 
 
 
@@ -4001,7 +3927,79 @@ EAShG4mgTBAEQRAEQRAEoRv9P2QAiHcdZL6uAAAAAElFTkSuQmCC
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[110]:</div>
+<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reviews</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;i loved this movie it was amazing&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;this movie was not good at all&quot;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first is straightforward. But the second expresses the opposite by a negation. As a result, there is still the word "good" in it, and our model is not great at understanding how "not" impacts "good" to reverse its meaning. Hence, the first review gets correctly labeled as positive with a probability of 97%, whereas the second review gets labeled as negative with only 51% probability.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pipe_best</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">stemming</span><span class="p">(</span><span class="n">reviews</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[32]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.02691319, 0.97308681],
+       [0.51140313, 0.48859687]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This illustrates that our model is only looking at word blocks, but is not able to retrieve any semantic from the syntax of the reviews. It is the main downside of this model.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Testing-the-model">Testing the model<a class="anchor-link" href="#Testing-the-model">&#182;</a></h3><p>In the previous steps, we have evaluated our model using cross validation. This has allowed to identify what modeling steps yielded the best results. Now, let us see how our model performs with reviews from the test set.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">test_labels</span><span class="p">,</span> <span class="n">pipe_best</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">test_reviews_stemmed</span><span class="p">))</span>
@@ -4034,7 +4032,81 @@ EAShG4mgTBAEQRAEQRAEoRv9P2QAiHcdZL6uAAAAAElFTkSuQmCC
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>This is really good isn't it?</p>
+<p>This is really good isn't it? Just for fun, let us try out our model on two more Hitchcock reviews found online (both are very positive reviews)</p>
+<p>a) A review of Notorious (Alfred Hitchcock, 1946) by From Frank Cottrell Boyce, The Guardian 2012 (<a href = "https://www.theguardian.com/film/2012/jun/17/my-favourite-hitchcock-film-notorious-frank-cottrell-boyce">full review here</a>)</p>
+<p>"Notorious is perfect. Everyone knows that. It's a testament to Ben Hecht's complex, headlong script that so many people have tried to rip it off and a testament to Hitchcock's genius that no one has ever succeeded. Take a look at the gabby, inconsequential, forgotten Mission Impossible: II and you'll see what I mean. The more obvious glories of Notorious include a revelatory performance from Cary Grant as the morally exhausted American agent Devlin, a terrifying Nazi-mother super-villain played by Leopoldine Konstantin and cinema's most cunningly prolonged kiss."</p>
+<p>b) A review of Vertigo (Alfred Hitchcock, 1958) by Peter Bradshaw, The Guardian 2018 (<a href = "https://www.theguardian.com/film/2018/jul/12/vertigo-review-alfred-hitchcock-james-stewart-kim-novak">full review here</a>)</p>
+<p>"When I watched this again, I felt more strongly than ever that Hitchcock’s decision to give us a story in which the Clouzot-esque twist is given away well before the end is no misjudgment. It is a brilliant way of putting us inside Judy’s tormented, guilty soul, and of avoiding, just for a while, that male gaze. I also realised what it is Vertigo has been subtly reminding me of for many years: Graham Greene’s The End of the Affair. A treat to see this back on the big screen."</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notorious_review</span> <span class="o">=</span> <span class="s2">&quot;Notorious is perfect. Everyone knows that. It&#39;s a testament to Ben Hecht&#39;s complex, headlong script that so many people have tried to rip it off and a testament to Hitchcock&#39;s genius that no one has ever succeeded. Take a look at the gabby, inconsequential, forgotten Mission Impossible: II and you&#39;ll see what I mean. The more obvious glories of Notorious include a revelatory performance from Cary Grant as the morally exhausted American agent Devlin, a terrifying Nazi-mother super-villain played by Leopoldine Konstantin and cinema&#39;s most cunningly prolonged kiss.&quot;</span>
+<span class="n">vertigo_review</span> <span class="o">=</span> <span class="s2">&quot;When I watched this again, I felt more strongly than ever that Hitchcock’s decision to give us a story in which the Clouzot-esque twist is given away well before the end is no misjudgment. It is a brilliant way of putting us inside Judy’s tormented, guilty soul, and of avoiding, just for a while, that male gaze. I also realised what it is Vertigo has been subtly reminding me of for many years: Graham Greene’s The End of the Affair. A treat to see this back on the big screen.&quot;</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[0]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hitchcock_reviews</span> <span class="o">=</span> <span class="p">[</span><span class="n">notorious_review</span><span class="p">,</span> <span class="n">vertigo_review</span><span class="p">]</span>
+<span class="n">hitchcock_reviews</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">review</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">hitchcock_reviews</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pipe_best</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">stemming</span><span class="p">(</span><span class="n">hitchcock_reviews</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[36]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.29270778, 0.70729222],
+       [0.0750691 , 0.9249309 ]])</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Notorious review is labeled as positive with 71%, the Vertigo review gets labeled as positive with 92% probability.</p>
 
 </div>
 </div>
