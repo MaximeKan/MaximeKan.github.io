@@ -1,33 +1,120 @@
 <!doctype html>
-<html class="no-js" lang="en">
+<html lang="en" itemscope itemtype="http://schema.org/Person">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Movie review classification - Part 2</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=9" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Source+Serif+Pro:400,700">
-    <link rel="stylesheet" type="text/css" href="https://MaximeKan.github.io/theme/css/main.css">
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Movie review classification - Part 2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="MaximeKan">
+
+  <link rel="shortcut icon" href="">
+
+  <!-- schema.org -->
+  <meta itemprop="name" content="Data Science for Movies">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
+
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/milligram.css" type="text/css" />
+  <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/custom.css" type="text/css" />
+
+  <!-- Feed Meta Data -->
+    <link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies ATOM Feed" />
+
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://MaximeKan.github.io/movie_review_classification_part2.html">
+<meta name="twitter:title" content="Data Science for Movies ~ Movie review classification - Part 2">
+<meta name="twitter:description" content="Part 2 of the IMDB movie reviews classification post">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Data Science for Movies ~ Movie review classification - Part 2" />
+<meta property="og:description" content="Part 2 of the IMDB movie reviews classification post" />
+<meta property="og:image" content="" />
 </head>
-<body itemscope itemtype="http://schema.org/Blog">
-<header class="site-header">
-    <a href="https://MaximeKan.github.io">
-    </a>
-    <h1 itemprop="name"><a href="https://MaximeKan.github.io"></a></h1>
-</header>
-    <section class="main-content">
-<article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
-    <header>
-        <h1 itemprop="headline" id="movie_review_classification_part2">Movie review classification - Part 2</h1>
-        <p>
-            <meta itemprop="datePublished" content="2019-07-21T00:00:00+02:00">
-            <meta itemprop="dateModified" content="2019-07-21T00:00:00+02:00">
-            Posted on 21 July 2019 in <a href="https://MaximeKan.github.io/category/posts.html">posts</a>
+
+<body>
+    <div class="container">
+
+    <!-- Navbar -->
+      <div class="navbar">
+        <ul>
+            <div>
+                <li>
+                    <a href="https://MaximeKan.github.io"><h3>Data Science for Movies</h3></a>
+                </li>
+                <li>
+                </li>
+            </div>
+        </ul>
+      </div>
+
+  <!-- Sidebar -->
+    <sidebar>
+        <ul class="static-item">
+
+        </ul>        
+
+        <ul>
+                <div class="cat-border">
+                <li style="color: #F2F1EF; background-color: #6C7A89;">Categories</li>
+                    <li><a href="https://MaximeKan.github.io/category/posts.html">posts</a></li>
+                </div>
+        </ul>
+
+            <h2><br/>BLOGROLLS</h2>
+            <ul>
+                    <li><a href="http://getpelican.com/">Pelican</a></li>
+                    <li><a href="http://python.org/">Python.org</a></li>
+                    <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                    <li><a href="/tags.html">tags</a></li>
+                    <li><a href="#">You can modify those links in your config file</a></li>
+            </ul> 
+   
+        <p> 
+                <span>
+                    <a href="#" target="_blank">
+                        <img class="social-icons-m" src="https://MaximeKan.github.io/theme/images/icons/you can add links in your config file.png">
+                    </a>
+                </span>
+                <span>
+                    <a href="#" target="_blank">
+                        <img class="social-icons-m" src="https://MaximeKan.github.io/theme/images/icons/another social link.png">
+                    </a>
+                </span>
         </p>
-    </header>
-    <section id="content" itemprop="mainEntityOfPage">
-        <style type="text/css">/*!
+        <p>
+            <a href="https://MaximeKan.github.io/feeds/all.atom.xml" rel="alternate">
+                <img class="social-icons-m" src="https://MaximeKan.github.io/theme/images/icons/rss.png"></a>
+        </p>
+        <p>
+        </p>
+    </sidebar>
+    
+    <maincontent>
+<h2>
+    <a href="https://MaximeKan.github.io/movie_review_classification_part2.html" rel="bookmark" title="Permalink to Movie review classification - Part 2">Movie review classification - Part 2</a>
+</h2>
+
+<div>
+    <b>By: </b><a href="https://MaximeKan.github.io/author/maxime-kan.html">Maxime Kan</a><b>    On: </b>Sun 21 July 2019<br />
+    <b>In: </b><a href="https://MaximeKan.github.io/category/posts.html" rel="bookmark" title="Permalink to posts">posts</a><br />
+    <em><b>Tags: </b>
+                <span><a href="https://MaximeKan.github.io/tag/classification.html">#Classification </a></span>
+                <span><a href="https://MaximeKan.github.io/tag/natural-language-processing.html">#Natural-Language-Processing </a></span>
+                <span><a href="https://MaximeKan.github.io/tag/convolutional-neural-network.html">#Convolutional-Neural-Network </a></span>
+    </em>
+    <hr>
+</div>
+
+<div>
+    <mainarticle>
+    <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -3835,23 +3922,27 @@ Our CNN achieves a 0.88 accuracy on the test set
 }
 </script>
 
-    </section>
-    <footer>
-        <div class="tags">
-                <a href="https://MaximeKan.github.io/tag/classification.html">Classification</a>
-                <a href="https://MaximeKan.github.io/tag/natural-language-processing.html">Natural-Language-Processing</a>
-                <a href="https://MaximeKan.github.io/tag/convolutional-neural-network.html">Convolutional-Neural-Network</a>
-        </div>
-<div class="vcard author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <a href="https://MaximeKan.github.io/author/maxime-kan.html">
-        <img class="photo circle" itemprop="image" content="" src=""/>
-        <strong class="fn name" itemprop="name">Maxime Kan</strong>
-    </a>
-</div>    </footer>
-</article>
-    </section>
+    </mainarticle>
+</div>
+<hr>
+        
+<div>
+        <i>If you found the article helpful, please share or cite the article, and spread the word:</i>
+            <p style="margin-top: 2%;">
+                <span><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://MaximeKan.github.io/movie_review_classification_part2.html&text=Movie review classification - Part 2&via="><img class="social-icons-a" src="https://MaximeKan.github.io/theme/images/icons/twitter.png"></a></span>
+                <span><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://MaximeKan.github.io/movie_review_classification_part2.html&t=Movie review classification - Part 2"><img class="social-icons-a" src="https://MaximeKan.github.io/theme/images/icons/facebook.png"></a></span>
 
-<footer class="site-footer">
-    <p>&copy; MaximeKan </p>
-</footer></body>
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://MaximeKan.github.io/movie_review_classification_part2.html&title=Movie review classification - Part 2" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img class="social-icons-a" src="https://MaximeKan.github.io/theme/images/icons/linkedin.png"></a>
+            </p>
+</div>
+<hr>
+    <p><i>For any feedback or corrections, please write in to: </i><b> MaximeKan </b></p>
+        
+    </maincontent>
+
+  <!-- Analytics -->
+
+  </div>
+</body>
+
 </html>
