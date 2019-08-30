@@ -1,77 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:og="http://ogp.me/ns#"
+      xmlns:fb="https://www.facebook.com/2008/fbml">
+<head>
+    <title>Movie review classification - Part 2</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!DOCTYPE HTML>
-<!--
-	Dopetrope 2.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-			<title>Data Science for Movies</title>
-			<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-			<meta charset="utf-8" />
-			<link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies Full Atom Feed" />
-			<link href="https://MaximeKan.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies Categories Atom Feed" />
-			<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,900,300italic" rel="stylesheet" />
-				<link rel="stylesheet" href="/theme/css/pygment.css" />
-			<noscript>
-				<link rel="stylesheet" href="/theme/css/skel-noscript.css" />
-				<link rel="stylesheet" href="/theme/css/style.css" />
-				<link rel="stylesheet" href="/theme/css/style-desktop.css" />
-			</noscript>
-	</head>
-	<body class="no-sidebar">
-		<!-- Header Wrapper -->
-			<div id="header-wrapper">
-				<div class="container">
-					<div class="row">
-						<div class="12u">
-						
-							<!-- Header -->
-								<section id="header">
-									
-									<!-- Logo -->
-									<h1><a href="https://MaximeKan.github.io/">Data Science for Movies</a></h1>
-									
-									<!-- Nav -->
-										<nav id="nav">
-											<ul>
-											</ul>
-										</nav>
+    <!-- Open Graph tags -->
 
-								</section>
+            <meta property="og:type" content="article"/>
+            <meta property="og:title" content="Movie review classification - Part 2"/>
+            <meta property="og:url" content="https://MaximeKan.github.io/movie_review_classification_part2.html"/>
+            <!--meta property="og:description" content="Part 2 of the IMDB movie reviews classification post"/-->
 
-						</div>
-					</div>
-				</div>
-			</div>
-		
-		<!-- Main Wrapper -->
-			<div id="main-wrapper">
-				<div class="container">
-<div class="row">
-	<div class="12u">
-			<section>
-				<div>
-					<div class="row">
-						<div class="12u skel-cell-mainContent">
-							<!-- Content -->
-								<article class="box is-post">
-									<div class="post-infos">
-										<ul class="tags">
-											<li><a class="button" href="category/posts.html">Posts</a></li>
-												<li><a class="button button-alt" href="tag/classification.html">Classification</a></li>
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/style.css">  
+    <link href="https://MaximeKan.github.io/theme/css/font-awesome.min.css" rel="stylesheet">
+    <!--link href="https://MaximeKan.github.io/theme/css/pygments.css" rel="stylesheet"-->
+    <link href="https://MaximeKan.github.io/theme/css/prism.css" rel="stylesheet" />
+  
+    <!-- JavaScript plugins (requires jQuery) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.pageslide.css">
 
-												<li><a class="button button-alt" href="tag/natural-language-processing.html">Natural-language-processing</a></li>
+        <link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Data Science for Movies ATOM Feed"/>
 
-												<li><a class="button button-alt" href="tag/convolutional-neural-network.html">Convolutional-neural-network</a></li>
+</head>
+<body>
 
-										</ul>
-									</div>
+<div class="wrap">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-8 col-lg-9 col-xs-12">
 
-									<div class="pennant pennant-alt date">2019-07-21</div>
-									<h2>Movie review classification - Part 2</h2>
-									<style type="text/css">/*!
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h2>
+                    <a href="https://MaximeKan.github.io/movie_review_classification_part2.html"
+                       rel="bookmark"
+                       title="Permalink to Movie review classification - Part 2">
+                        Movie review classification - Part 2
+                    </a>
+                </h2>
+            </header>
+            <div class="entry-content">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="icon-calendar"></i>Sun 21 July 2019
+    </span>
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="https://MaximeKan.github.io/tag/classification.html">Classification</a>
+        /
+	<a href="https://MaximeKan.github.io/tag/natural-language-processing.html">Natural-Language-Processing</a>
+        /
+	<a href="https://MaximeKan.github.io/tag/convolutional-neural-network.html">Convolutional-Neural-Network</a>
+  
+</footer><!-- /.post-info -->                    </div>
+                    <div class="panel-body">
+                    <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -3879,90 +3877,85 @@ Our CNN achieves a 0.88 accuracy on the test set
 }
 </script>
 
-								</article>
-						</div>
-					</div>
-				</div>
-			</section>
-	</div>
+                    </div>
+                </div>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+        
+        <ul class="pager">
+        </ul>
+            </section>
+
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-3 col-xs-12">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a class="btn btn-default" href="https://MaximeKan.github.io/index.html">Home</a></li>
+                    <li>
+                        <a class="btn btn-default" href="https://MaximeKan.github.io/archives.html">Archives</a>
+                    </li>
+                </ul><hr />
+
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        ~ Follow me ~
+    </div>
+    <div class="panel-body">
+        <a href="#"><img
+            class= "social-icon" src="https://MaximeKan.github.io/theme/images/You can add links in your config file-icon.png"></img>
+        </a>
+        <a href="#"><img
+            class= "social-icon" src="https://MaximeKan.github.io/theme/images/Another social link-icon.png"></img>
+        </a>
+    </div>
 </div>
 
-				</div>
-			</div>
 
-		<!-- Footer Wrapper -->
-			<div id="footer-wrapper">
-				<!-- Footer -->
-					<section id="footer" class="container">
-						<div class="row">
-							<div class="8u">
-								<section>
-									<header>
-										<h2>Latest articles</h2>
-									</header>
-									<ul class="dates">
-										<li>
-											<span class="date">Jul <strong>21</strong></span>
-											<h3><a href="estimating_actor_activity.html">Estimating Actor Activity</a></h3>
-											<p><p>Estimating how active actors will be in the future</p></p>
-										</li>
-										<li>
-											<span class="date">Jul <strong>21</strong></span>
-											<h3><a href="movie_review_classification_part2.html">Movie review classification - Part 2</a></h3>
-											<p><p>Part 2 of the IMDB movie reviews classification post</p></p>
-										</li>
-										<li>
-											<span class="date">Feb <strong>06</strong></span>
-											<h3><a href="movie_review_classification_part1.html">Movie review classification - Part 1</a></h3>
-											<p><p>A Machine Learnling classic: how to classify movie reviews?</p></p>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-						<div class="row">
-							<div class="4u">
-								<section>
-									<header>
-										<h2>Blogroll</h2>
-									</header>
-									<ul class="divided">
-											<li><a href="http://getpelican.com/">Pelican</a></li>
-											<li><a href="http://python.org/">Python.org</a></li>
-											<li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-											<li><a href="/tags.html">tags</a></li>
-											<li><a href="#">You can modify those links in your config file</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="4u">
-								<section>
-									<header>
-										<h2>Categories</h2>
-									</header>
-									<ul class="divided">
-											<li><a href="https://MaximeKan.github.io/category/posts.html">posts</a></li>
-									</ul>
-								</section>
-							</div>
-							<div class="4u">
-							
-								<section>
-									<header>
-										<h2>Contact</h2>
-									</header>
-									<ul class="social">
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
-			</div>
-		<script src="/theme/js/jquery.min.js"></script>
-		<script src="/theme/js/jquery.dropotron.js"></script>
-		<script src="/theme/js/config.js"></script>
-		<script src="/theme/js/skel.min.js"></script>
-		<script src="/theme/js/skel-panels.min.js"></script>
-		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->
-	</body>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        ~ Interesting Links ~
+    </div>
+    <div class="panel-body">
+        <li class="list-group-item"><a href="http://getpelican.com/">Pelican
+        </a></li>
+        <li class="list-group-item"><a href="http://python.org/">Python.org
+        </a></li>
+        <li class="list-group-item"><a href="http://jinja.pocoo.org/">Jinja2
+        </a></li>
+        <li class="list-group-item"><a href="/tags.html">tags
+        </a></li>
+        <li class="list-group-item"><a href="#">You can modify those links in your config file
+        </a></li>
+    </div>
+</div>
+
+                    
+            </div>
+        </div>
+        <hr class="hidden-xs"/>
+        <div class="row">
+            <div class="footer">
+                <div class="container">
+                    <p class="footnote">©Christine Doig. Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</i></a>. Thanks to <a href="http://twitter.github.com/bootstrap/">Bootstrap</i></a>, <a href="http://subtlepatterns.com/">Subtle Patterns</i></a> and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome.</a><a href="https://github.com/chdoig/pelican-bootstrap3-lovers">Lovers Theme</a> by Christine Doig
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://MaximeKan.github.io/theme/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.pageslide.min.js"></script>
+<script src="https://MaximeKan.github.io/theme/js/prism.js"></script>
+<script>function validateForm(query)
+    {return (query.length > 0);}
+</script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="https://MaximeKan.github.io/theme/js/respond.min.js"></script>
+</body>
 </html>
