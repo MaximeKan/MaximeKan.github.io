@@ -1,61 +1,82 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
 <head>
-    <meta charset="UTF-8">
-    <title> Estimating Actor Activity</title>
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Estimating Actor Activity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="MaximeKan">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
+  <link rel="shortcut icon" href="">
 
-    <meta name="description" content="">
-    <meta name="author" content="MaximeKan">
+  <!-- schema.org -->
+  <meta itemprop="name" content="Data Science for Movies">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
 
-    <link href="https://MaximeKan.github.io/theme/css/fonts.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/pygments.css" type="text/css" />
 
-    <link href="https://MaximeKan.github.io/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/custom.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/pygement.css" rel="stylesheet"/>
+  <!-- Feed Meta Data -->
+    <link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies ATOM Feed" />
 
-    <script src="https://MaximeKan.github.io/theme/js/jquery.min.js"></script>
-    <script src="https://MaximeKan.github.io/theme/js/run_prettify.js"></script>
-    <script src="https://MaximeKan.github.io/theme/js/site.js"></script>
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://MaximeKan.github.io/estimating_actor_activity.html">
+<meta name="twitter:title" content="Data Science for Movies ~ Estimating Actor Activity">
+<meta name="twitter:description" content="<p>Estimating how active actors will be in the future</p>">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Data Science for Movies ~ Estimating Actor Activity" />
+<meta property="og:description" content="<p>Estimating how active actors will be in the future</p>" />
+<meta property="og:image" content="" />
 </head>
-<body class="code-snippets-visible">
 
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="https://MaximeKan.github.io/">
-                    HOME
-                </a>
-            </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="https://MaximeKan.github.io/"><img src="https://MaximeKan.github.io/" class="site-icon"/></a>
-        </div>
-    </div>
-</nav>
-<div class="container">
-    <section id="content">
-        <article>
-            <p class="article-date">
-                2019-07-21 00:00:00+02:00
-            </p>
-            <header class="header">
-                <a href="https://MaximeKan.github.io/estimating_actor_activity.html" rel="bookmark" title="Permalink to Estimating Actor Activity">
-                    <h2 class="blogpost-title">
-                        Estimating Actor Activity
-                    </h2>
-                </a>
-            </header>
-            <div>
-                <style type="text/css">/*!
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <!--<center><a href="https://MaximeKan.github.io"><img id="avatar" src=""></a></center>-->
+    <h1>Data Science for Movies</h1>
+    <br>
+
+
+    <nav class="nav">
+      <ul class="list-bare">
+      
+         
+         
+      </ul>
+    </nav>
+
+    <p class="social">
+        <a href="#" target="_blank" ><img src="https://MaximeKan.github.io/theme/images/icons/you can add links in your config file.png"></a>
+        <a href="#" target="_blank" ><img src="https://MaximeKan.github.io/theme/images/icons/another social link.png"></a>
+      <a href="https://MaximeKan.github.io/feeds/all.atom.xml" rel="alternate">
+        <img src="https://MaximeKan.github.io/theme/images/icons/rss.png"></a>
+    </p>
+
+    <!--
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li class="active"><a href="https://MaximeKan.github.io/category/posts.html">posts</a></li>
+    </ul> 
+    -->
+  </aside>
+
+  <!-- Content -->
+  <article>
+<section id="content">
+    <article>
+        <h2 class="post_title post_detail"><a href="https://MaximeKan.github.io/estimating_actor_activity.html" rel="bookmark" title="Permalink to Estimating Actor Activity">Estimating Actor Activity</a></h2>
+        <div class="entry-content blog-post">
+            <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -9027,33 +9048,43 @@ RU5ErkJggg==
 }
 </script>
 
+        </div>
+        <div class="post_list">
+            <span>By </span>
+            <a href="https://MaximeKan.github.io/author/maxime-kan.html">@Maxime Kan</a>
+            <span> in </span>
+            <span class="post_category"><a href="https://MaximeKan.github.io/category/posts.html" rel="bookmark" title="Permalink to posts">[ posts ]</a></span>
+            <span class="post_date">Sun 21 July 2019</span>
+            <div><span>Tags : </span>
+                <span><a href="https://MaximeKan.github.io/tag/statistical-modeling.html">#Statistical-Modeling, </a></span>
+                <span><a href="https://MaximeKan.github.io/tag/customer-lifetime-value.html">#Customer-Lifetime-Value, </a></span>
             </div>
-            <div class="article-info">
-                <hr/>
-                <div class="article-info">
-                    <span><b>Category: </b><a href="https://MaximeKan.github.io/category/posts.html">posts</a></span>
-                    <br/>
-                    <span><b>Publication Date: </b> Sun 21 July 2019 </span>
-                    <br/>
-                        <a class="label-default" href="https://MaximeKan.github.io/tag/statistical-modeling.html">Statistical-Modeling</a>
-                        <a class="label-default" href="https://MaximeKan.github.io/tag/customer-lifetime-value.html">Customer-Lifetime-Value</a>
-                    <br/>
-                </div>
+
+            <div class="entry-social">
+                <span class="twitter"><a target="_blank" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=700');return false;" title="Twitter" href="https://twitter.com/share?url=https://MaximeKan.github.io/estimating_actor_activity.html&text=Estimating Actor Activity&via="><img src="https://MaximeKan.github.io/theme/images/icons/twitter-s.png"></a></span>
+
+                <span class="gplus"><a target="_blank" title="Google +" href="https://plus.google.com/share?url=https://MaximeKan.github.io/estimating_actor_activity.html&hl=fr" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://MaximeKan.github.io/theme/images/icons/google-s.png"></a></span>
+
+                <span class="facebook"><a target="_blank" title="Facebook" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=500,width=700');return false;" href="https://www.facebook.com/sharer.php?u=https://MaximeKan.github.io/estimating_actor_activity.html&t=Estimating Actor Activity"><img src="https://MaximeKan.github.io/theme/images/icons/facebook-s.png"></a></span>
+
+                <a  target="_blank" title="Linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https://MaximeKan.github.io/estimating_actor_activity.html&title=Estimating Actor Activity" rel="nofollow" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=450,width=650');return false;"><img src="https://MaximeKan.github.io/theme/images/icons/linkedin-s.png"></a>
+
+                <span class="mail"><a href="mailto:?subject=Estimating Actor Activity&amp;body=Viens découvrir un article à propos de [Estimating Actor Activity] sur le site de MaximeKan. https://MaximeKan.github.io/estimating_actor_activity.html" title="Share by Email" target="_blank"><img src="https://MaximeKan.github.io/theme/images/icons/mail-s.png"></a></span>
             </div>
-        </article>
-    </section>
-        <br/><br/><br/><br/>
+        </div>
+    </article>
+</section>
+  </article>
 
-</div>
+  <!-- Footer -->
+  <footer>
+    <p>
+      Blog powered by <a href="http://getpelican.com/">Pelican</a>, 
+      which takes great advantage of <a href="http://python.org">Python</a>.
+      Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a href="https://parbhatpuri.com/">@parbhat</a>.
+    </p>
+  </footer>
 
-<footer class="footer">
-    &copy <a href="https://MaximeKan.github.io/" >MaximeKan</a>. 2016
-    <br/>
-    Powered by <a href="http://getpelican.com/">pelican</a>.
-    Theme by <a href="http://github.com/liyuan-t/ops">ops</a>
-    <br/>
-</footer>
-<script>
-</script>
+
 </body>
 </html>

@@ -1,119 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" itemscope itemtype="http://schema.org/Person">
 <head>
-    <meta charset="UTF-8">
-    <title>Data Science for Movies - Articles by Maxime Kan</title>
+  <meta charset="utf-8">
+  <!-- Site Meta Data -->
+  <title>Data Science for Movies - Maxime Kan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="MaximeKan">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="wb:webmaster" content="ba29596b8c7c7ae7" /> 
+  <link rel="shortcut icon" href="">
 
-    <meta name="description" content="">
-    <meta name="author" content="MaximeKan">
+  <!-- schema.org -->
+  <meta itemprop="name" content="Data Science for Movies">
+  <meta itemprop="image" content="">
+  <meta itemprop="description" content="">
 
-    <link href="https://MaximeKan.github.io/theme/css/fonts.css" rel="stylesheet" />
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+  <!-- Style Meta Data -->
+  <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/style.css" type="text/css" />
+  <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/pygments.css" type="text/css" />
 
-    <link href="https://MaximeKan.github.io/theme/css/normalize.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/skeleton.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/github-prettify-theme.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/custom.css" rel="stylesheet"/>
-    <link href="https://MaximeKan.github.io/theme/css/pygement.css" rel="stylesheet"/>
+  <!-- Feed Meta Data -->
+    <link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies ATOM Feed" />
 
-    <script src="https://MaximeKan.github.io/theme/js/jquery.min.js"></script>
-    <script src="https://MaximeKan.github.io/theme/js/run_prettify.js"></script>
-    <script src="https://MaximeKan.github.io/theme/js/site.js"></script>
+  <!-- Twitter Feed -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:image" content="">
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://MaximeKan.github.io">
+<meta name="twitter:title" content="Data Science for Movies">
+<meta name="twitter:description" content="">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Data Science for Movies" />
+<meta property="og:description" content="" />
+<meta property="og:image" content="" />
+
+<meta name="twitter:creator" content="">
+<meta name="twitter:url" content="https://MaximeKan.github.io/author/maxime-kan.html">
+<meta name="twitter:title" content="Data Science for Movies ~ Maxime Kan">
+<meta name="twitter:description" content="Articles de Maxime Kan">
+
+<!-- Facebook Meta Data -->
+<meta property="og:title" content="Data Science for Movies ~ Maxime Kan" />
+<meta property="og:description" content="Articles de Maxime Kan" />
+<meta property="og:image" content="" />
 </head>
-<body class="code-snippets-visible">
 
-<div class="navbar-spacer"></div>
-<nav class="navbar">
-    <div class="container">
-        <ul class="navbar-list">
-            <li class="navbar-item">
-                <a class="navbar-link" href="https://MaximeKan.github.io/">
-                    HOME
-                </a>
-            </li>
-        </ul>
-        <div class="navbar-link">
-            <a href="https://MaximeKan.github.io/"><img src="https://MaximeKan.github.io/" class="site-icon"/></a>
-        </div>
-    </div>
-</nav>
-<div class="container">
-    <section class="header">
-<section class="header">
-    <div class="circular" style="background: url( ) no-repeat; background-position: center;"></div>
-    <h2 class="title">Data Science for Movies</h2>
-    <h4 class="subtitle"></h4>
-        <a href="#">
-            <img class="social-icon" src="https://MaximeKan.github.io/theme/images/You can add links in your config file-128.png" style="width: 64px;">
-        </a>
-        <a href="#">
-            <img class="social-icon" src="https://MaximeKan.github.io/theme/images/Another social link-128.png" style="width: 64px;">
-        </a>
-</section>    </section>
+<body>
+  <!-- Sidebar -->
+  <aside>
+    <!--<center><a href="https://MaximeKan.github.io"><img id="avatar" src=""></a></center>-->
+    <h1>Data Science for Movies</h1>
+    <br>
 
-    <section class="home-section">
-        <h2 class="home-header">
-            Recent blog posts
-        </h2>
-        <div>
-                <div class="home-post">
-                    <p class="blogpost-date" style="float: right;">Sun 21 July 2019</p>
-                    <h5><a href="https://MaximeKan.github.io/estimating_actor_activity.html">Estimating Actor Activity</a></h5>
-                    <p>
-                    <p><p>Estimating how active actors will be in the future</p></p>
-                </div>
-                <div class="row">
-                    <a class="button button-primary button-more" href="https://MaximeKan.github.io/estimating_actor_activity.html">More...</a>
-                </div>
-                <div class="home-post">
-                    <p class="blogpost-date" style="float: right;">Sun 21 July 2019</p>
-                    <h5><a href="https://MaximeKan.github.io/movie_review_classification_part2.html">Movie review classification - Part 2</a></h5>
-                    <p>
-                    <p><p>Part 2 of the IMDB movie reviews classification post</p></p>
-                </div>
-                <div class="row">
-                    <a class="button button-primary button-more" href="https://MaximeKan.github.io/movie_review_classification_part2.html">More...</a>
-                </div>
-                <div class="home-post">
-                    <p class="blogpost-date" style="float: right;">Wed 06 February 2019</p>
-                    <h5><a href="https://MaximeKan.github.io/movie_review_classification_part1.html">Movie review classification - Part 1</a></h5>
-                    <p>
-                    <p><p>A Machine Learnling classic: how to classify movie reviews?</p></p>
-                </div>
-                <div class="row">
-                    <a class="button button-primary button-more" href="https://MaximeKan.github.io/movie_review_classification_part1.html">More...</a>
-                </div>
-        </div>
-    </section>
-    <br/><br/><br/>
-    <section class="home-section">
-        <div class="row">
-            <div class="">
-                <h2 class="blogpost-title">Links</h2>
-                <div class="home-post">
-                        <a href="http://getpelican.com/" target="_blank">Pelican</a>&nbsp; &nbsp;
-                        <a href="http://python.org/" target="_blank">Python.org</a>&nbsp; &nbsp;
-                        <a href="http://jinja.pocoo.org/" target="_blank">Jinja2</a>&nbsp; &nbsp;
-                        <a href="/tags.html" target="_blank">tags</a>&nbsp; &nbsp;
-                        <a href="#" target="_blank">You can modify those links in your config file</a>&nbsp; &nbsp;
-                </div>
-            </div>
-        </div>
-    </section>
-</div>
 
-<footer class="footer">
-    &copy <a href="https://MaximeKan.github.io/" >MaximeKan</a>. 2016
-    <br/>
-    Powered by <a href="http://getpelican.com/">pelican</a>.
-    Theme by <a href="http://github.com/liyuan-t/ops">ops</a>
-    <br/>
-</footer>
-<script>
-</script>
+    <nav class="nav">
+      <ul class="list-bare">
+      
+         
+         
+      </ul>
+    </nav>
+
+    <p class="social">
+        <a href="#" target="_blank" ><img src="https://MaximeKan.github.io/theme/images/icons/you can add links in your config file.png"></a>
+        <a href="#" target="_blank" ><img src="https://MaximeKan.github.io/theme/images/icons/another social link.png"></a>
+      <a href="https://MaximeKan.github.io/feeds/all.atom.xml" rel="alternate">
+        <img src="https://MaximeKan.github.io/theme/images/icons/rss.png"></a>
+    </p>
+
+    <!--
+    <h2>Categories</h2>
+    <ul class="navbar">
+      <li><a href="https://MaximeKan.github.io/category/posts.html">posts</a></li>
+    </ul> 
+    -->
+  </aside>
+
+  <!-- Content -->
+  <article>
+<h1 class="title">Hi, I'm MaximeKan</h1>
+
+<ol>
+	<h2 class="latest">Latest Posts</h2>
+	<li class="post_list"><p class="post_entry">
+		<h2 class="post_title"><a href="https://MaximeKan.github.io/estimating_actor_activity.html" rel="bookmark" title="Permalink to Estimating Actor Activity">Estimating Actor Activity</a></h2>
+		<a href="https://MaximeKan.github.io/author/maxime-kan.html">@Maxime Kan</a>
+		<span> in </span>
+		<span class="post_category"><a href="https://MaximeKan.github.io/category/posts.html" rel="bookmark" title="Permalink to posts">[ posts ]</a></span>
+		<span class="post_date">Sun 21 July 2019</span>
+	</li>
+	<li class="post_list"><p class="post_entry">
+		<h2 class="post_title"><a href="https://MaximeKan.github.io/movie_review_classification_part2.html" rel="bookmark" title="Permalink to Movie review classification - Part 2">Movie review classification - Part 2</a></h2>
+		<a href="https://MaximeKan.github.io/author/maxime-kan.html">@Maxime Kan</a>
+		<span> in </span>
+		<span class="post_category"><a href="https://MaximeKan.github.io/category/posts.html" rel="bookmark" title="Permalink to posts">[ posts ]</a></span>
+		<span class="post_date">Sun 21 July 2019</span>
+	</li>
+	<li class="post_list"><p class="post_entry">
+		<h2 class="post_title"><a href="https://MaximeKan.github.io/movie_review_classification_part1.html" rel="bookmark" title="Permalink to Movie review classification - Part 1">Movie review classification - Part 1</a></h2>
+		<a href="https://MaximeKan.github.io/author/maxime-kan.html">@Maxime Kan</a>
+		<span> in </span>
+		<span class="post_category"><a href="https://MaximeKan.github.io/category/posts.html" rel="bookmark" title="Permalink to posts">[ posts ]</a></span>
+		<span class="post_date">Wed 06 February 2019</span>
+	</li>
+</ol>
+
+
+  </article>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Blog powered by <a href="http://getpelican.com/">Pelican</a>, 
+      which takes great advantage of <a href="http://python.org">Python</a>.
+      Theme <a href="https://github.com/parbhat/pelican-blue">Pelican-Blue</a> by <a href="https://parbhatpuri.com/">@parbhat</a>.
+    </p>
+  </footer>
+
+
 </body>
 </html>
