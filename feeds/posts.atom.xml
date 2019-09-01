@@ -11349,18 +11349,6 @@ aZ8AAAAASUVORK5CYII=
 
 &lt;div class="output_area"&gt;
 
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stderr output_text"&gt;
-&lt;pre&gt;/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
-  if np.issubdtype(vec.dtype, np.int):
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div class="output_area"&gt;
-
     &lt;div class="prompt output_prompt"&gt;Out[15]:&lt;/div&gt;
 
 
@@ -11404,18 +11392,6 @@ aZ8AAAAASUVORK5CYII=
 &lt;div class="output_wrapper"&gt;
 &lt;div class="output"&gt;
 
-
-&lt;div class="output_area"&gt;
-
-    &lt;div class="prompt"&gt;&lt;/div&gt;
-
-
-&lt;div class="output_subarea output_stream output_stderr output_text"&gt;
-&lt;pre&gt;/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
-  if np.issubdtype(vec.dtype, np.int):
-&lt;/pre&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 
 &lt;div class="output_area"&gt;
 
