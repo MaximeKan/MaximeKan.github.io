@@ -1577,13 +1577,7 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Colocations handled automatically by placer.
-WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-_________________________________________________________________
+<pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
 embedding_1 (Embedding)      (None, 500, 50)           150000    
@@ -1638,10 +1632,7 @@ _________________________________________________________________
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use tf.cast instead.
-Train on 18750 samples, validate on 6250 samples
+<pre>Train on 18750 samples, validate on 6250 samples
 Epoch 1/10
 18750/18750 [==============================] - 4s 204us/step - loss: 0.6791 - acc: 0.5996 - val_loss: 0.6292 - val_acc: 0.7475
 Epoch 2/10
