@@ -1,64 +1,54 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html>
 <head>
-
-    <title>Estimating Actor Activity - Data Science for Movies</title>
-
-    <!-- meta -->
+    <!-- Standard Meta -->
     <meta charset="utf-8" />
-    <meta name="author" content="MaximeKan" />
-    <meta name="dc.language" content="en" />
-    <meta name="dc.license" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <!-- Site Properities -->
+    <title>Estimating Actor Activity</title>
 
-    <!-- favicon -->
-    <link rel="icon" href="https://MaximeKan.github.io/theme/favicon.ico" type="image/x-icon">
+    <meta name="description" content="">
 
-    <!-- newsfeeds -->
-        <link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies Full Atom Feed" />
-        <link href="https://MaximeKan.github.io/feeds/posts.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies Categories Atom Feed" />
+    <meta property="og:site_name" content="Data Science for Movies" />
+    <meta property="og:locale" content="en" />
 
-    <!-- assets -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-   
-    <link href="https://fonts.googleapis.com/css?family=Linden+Hill:400,400italic" rel="stylesheet" type="text/css">
-    <link href='http://fonts.googleapis.com/css?family=Anonymous+Pro' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/simplegrid.css" type="text/css">
-    <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/main.css" type="text/css">
-    <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/pygments.css" type="text/css">
-    <!--[if lt IE 8]>
-        <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet" type="text/css">
-    <![endif]-->
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css">
+<meta property="og:title" content="Estimating Actor Activity" />
+<meta property="og:url" content="estimating_actor_activity.html"/>
+<meta property="og:description" content=" " />
+<meta property="og:type" content="article" />
+<meta property="og:author" content="Maxime Kan" />
 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data Science for Movies">
+    <meta name="twitter:description" content="">
+    <!--meta name="twitter:image" content=""-->
+
+    <link rel="stylesheet" type="text/css" href="https://MaximeKan.github.io/theme/css/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="https://MaximeKan.github.io/theme/css/custom.css">
 </head>
-
 <body>
-
-   <div class="grid grid-pad">
-     <div class="col-1-1">        
-       <ul id="mainnav">
-          <li><a href="https://MaximeKan.github.io">home</a></li>
-       </ul>
-       <div id="blogtitle"><a href="https://MaximeKan.github.io">Data Science for Movies</a></div>
-       <div id="blogsubtitle"><a href="https://MaximeKan.github.io"></a></div>
-     </div>
+<div class="ui borderless fixed stackable main menu">
+    <div class="ui text container">
+        <a href="/" class="header item">
+            <img class="logo" src="https://MaximeKan.github.io/theme/images/logo.png">
+            Data Science for Movies
+        </a>
     </div>
-
-    <div class="grid grid-pad">
-       <div id="left-side" class="col-8-12">
-          <section id="content" class="hyphenate">
-
-    <h1 class="title">Estimating Actor Activity</h1>
-
-        <div class="date">
-            <p>written on Sun 21 July 2019
-            by <a rel="author" href="https://MaximeKan.github.io/pages/aboutme.html">MaximeKan</a></p>
+</div>
+<div class="ui text container center aligned article-top">
+    <h1 class="ui header article-huge">Estimating Actor Activity</h1>
+</div>
+<div class="ui text container tall stacked segment">
+    <div class="overlay">
+        <div class="ui labeled icon vertical menu">
+            <a class="item sharer" data-sharer="twitter" data-title="Estimating Actor Activity" data-url="https://MaximeKan.github.io/estimating_actor_activity.html"><i class="twitter icon"></i> Tweet</a>
+            <a data-sharer="facebook" data-url="https://MaximeKan.github.io/estimating_actor_activity.html" class="item sharer"><i class="facebook icon"></i> Share</a>
+            <a data-sharer="googleplus" data-url="https://MaximeKan.github.io/estimating_actor_activity.html" class="item sharer"><i class="google plus icon"></i> Share</a>
+            <a class="item sharer" data-sharer="email" data-to="" data-title="Estimating Actor Activity" data-subject="Checkout this article!" data-url="https://MaximeKan.github.io/estimating_actor_activity.html"><i class="mail icon"></i> E-mail</a>
         </div>
-
-    <div class="clearboth"><style type="text/css">/*!
+    </div>
+    <style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -9029,95 +9019,49 @@ RU5ErkJggg==
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script>
+
+
 </div>
 
-        <div class="tags">
-            <p>This entry was tagged on  
-                <a href="https://MaximeKan.github.io/tag/customer-lifetime-value.html">#Customer-Lifetime-Value</a> and                 <a href="https://MaximeKan.github.io/tag/statistical-modeling.html">#Statistical-Modeling</a></p>
+<div class="ui inverted vertical footer segment">
+    <div class="ui center aligned container">
+        <div class="ui stackable inverted divided grid">
+            <div class="eight wide column">
+                <h4 class="ui inverted header">Links</h4>
+                <div class="ui inverted link list">
+                    <a href="http://getpelican.com/" class="item">Pelican</a>
+                    <a href="http://python.org/" class="item">Python.org</a>
+                    <a href="http://jinja.pocoo.org/" class="item">Jinja2</a>
+                    <a href="/tags.html" class="item">tags</a>
+                    <a href="#" class="item">You can modify those links in your config file</a>
+                </div>
+            </div>
+            <div class="four wide column">
+                <h4 class="ui inverted header">Extra content</h4>
+                <p>Some content</p>
+            </div>
         </div>
-
-
-          </section>
-       </div>
-
-       <div id="right-side" class="col-1-12">&nbsp;</div>
-       <div id="right-side" class="col-3-12">
-
-<div class="section-container">
-   <h3>Blogroll</h3>
-   <ul>
-      <li><a href="http://getpelican.com/" target="_blank">Pelican <i class="fa fa-globe fa-fw"></i></a></li>
-      <li><a href="http://python.org/" target="_blank">Python.org <i class="fa fa-globe fa-fw"></i></a></li>
-      <li><a href="http://jinja.pocoo.org/" target="_blank">Jinja2 <i class="fa fa-globe fa-fw"></i></a></li>
-      <li><a href="/tags.html" target="_blank">tags <i class="fa fa-globe fa-fw"></i></a></li>
-      <li><a href="#" target="_blank">You can modify those links in your config file <i class="fa fa-globe fa-fw"></i></a></li>
-   </ul>
-</div>
-
-<div class="section-container">
-   <h3>Social Network</h3>
-   <ul>
-      <li>
-        <a href="#" target="_blank">You can add links in your config file&nbsp;
-           <i class="fa fa-globe fa-fw"></i>
-        </a>
-      </li>
-      <li>
-        <a href="#" target="_blank">Another social link&nbsp;
-           <i class="fa fa-globe fa-fw"></i>
-        </a>
-      </li>
-   </ul>
-</div>
-
-<div class="section-container">
-   <h3>Categories</h3>
-   <ul>
-        <li><a href="https://MaximeKan.github.io/category/posts.html">posts <i class="fa fa-folder-open fa-fw"></i></a></li>
-   </ul>
-</div>
-
-<div class="section-container">
-   <h3>Tags</h3>
-   <ul class="tagcloud">
-   </ul>
-</div>
-
-<div class="section-container">
-   <h3>Feeds</h3>
-   <ul>
-      <li><a href="https://MaximeKan.github.io/feeds/all.atom.xml" rel="alternate">atom feed <i class="fa fa-rss fa-fw"></i></a></li>
-   </ul>
-</div>
-
-
-          <div class="section-container" id="copyright">
-             <p>This Blog generated by <a href="http://getpelican.com/">Pelican</a> using <a href="https://github.com/habibillah/pujangga">Pujangga</a> theme. All content on this blog, unless stated otherwise, is licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 International license</a>.</p>
-          </div>
-       </div>
+        <div class="ui inverted section divider"></div>
+        <img class="ui centered mini image" src="https://MaximeKan.github.io/theme/images/logo.png">
+        <div class="ui horizontal inverted small divided link list">
+            <a href="http://getpelican.com/" class="item">Pelican</a>
+            <a href="http://python.org/" class="item">Python.org</a>
+            <a href="http://jinja.pocoo.org/" class="item">Jinja2</a>
+            <a href="/tags.html" class="item">tags</a>
+            <a href="#" class="item">You can modify those links in your config file</a>
+        </div>
     </div>
-
-    <script type="text/javascript">
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '']);
-      _gaq.push(['_trackPageview']);
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-    </script>
- 
-
-    <script type="text/javascript" src="https://MaximeKan.github.io/theme/js/hyphenator.js"></script>
-    <script type="text/javascript">
-      Hyphenator.config({
-          donthyphenateclassname: 'docutils',
-          useCSS3hyphenation: true
-      });
-      Hyphenator.run();
-    </script>
-
+</div>
+    <script type="text/javascript" src="https://MaximeKan.github.io/theme/js/jquery.min.js"></script>
+    <script type="text/javascript" src="https://MaximeKan.github.io/theme/js/semantic.min.js"></script>
+<script type="text/javascript" src="https://MaximeKan.github.io/theme/js/sharer.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('.overlay').visibility({
+        type: 'fixed',
+        offset: 80
+    });
+});
+</script>
 </body>
-
 </html>
