@@ -1,43 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-        <meta charset="utf-8" />
-        <title>Movie review classification - Part 2</title>
-        <link rel="stylesheet" href="https://MaximeKan.github.io/theme/css/main.css" />
-        <link href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Data Science for Movies Atom Feed" />
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="MaximeKan" />
+    <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
 
-        <!--[if IE]>
-            <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <title>Movie review classification - Part 2 - Data Science for Movies</title>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://MaximeKan.github.io/">Data Science for Movies </a></h1>
-                <nav><ul>
-                    <li class="active"><a href="https://MaximeKan.github.io/category/posts.html">posts</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-<section id="content" class="body">
-  <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="https://MaximeKan.github.io/movie_review_classification_part2.html" rel="bookmark"
-           title="Permalink to Movie review classification - Part 2">Movie review classification - Part 2</a></h1>
-    </header>
+   
+        <link rel="stylesheet"
+              href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+              integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+              crossorigin="anonymous" />
+      <link rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+            crossorigin="anonymous">
 
-    <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2019-07-21T00:00:00+02:00">
-                Published: Sun 21 July 2019
-        </abbr>
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://MaximeKan.github.io/author/maxime-kan.html">Maxime Kan</a>
-        </address>
-<p>In <a href="https://MaximeKan.github.io/category/posts.html">posts</a>.</p>
-<p>tags: <a href="https://MaximeKan.github.io/tag/classification-natural-language-processing-cnn.html">Classification Natural-Language-Processing CNN</a> </p>
-</footer><!-- /.post-info -->      <style type="text/css">/*!
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js" integrity="sha384-FFgGfda92tXC8nCNOxrCQ3R8x1TNkMFqDZVQdDaaJiiVbjkPBXIJBx0o7ETjy8Bh" crossorigin="anonymous"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js" integrity="sha384-ZoaMbDF+4LeFxg6WdScQ9nnR1QC2MIRxA1O9KWEXQwns1G8UNyIEZIQidzb0T1fo" crossorigin="anonymous"></script>
+    <![endif]-->
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+  </head>
+
+  <body>
+   
+    <nav class="navbar navbar-default">
+      <div class="container">
+	   <div class="navbar-header">
+		<button type="button" class="navbar-toggle" 
+				data-toggle="collapse" data-target="#main-navbar-collapse">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+		<a class="navbar-brand" href="/" rel="home">
+          <i class="fa fa-home fa-fw fa-lg"> </i> </a>
+       </div>
+
+      <div class="collapse navbar-collapse" id="main-navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="divider"></li>
+            <li class="">
+              <a href="/archives.html">Archives</a>
+            </li>
+          <li class="divider"></li>
+        </ul> <!-- /nav -->
+      </div> <!-- /navbar-collapse -->
+	  </div> <!-- /container -->
+    </nav> <!-- /navbar -->
+
+	<div class="jumbotron" id="overview">
+	  <div class="container">
+		<h1><a href="/">Data Science for Movies</a></h1>
+	  </div>
+	</div>
+
+    <div class="container" id="main-container">
+        <div class="" id="content">
+<article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+  <header class="article-header">
+<abbr class="article-header-date">
+  Sun 19 May 2019
+</abbr> <h1>
+  <a href="/movie_review_classification_part2.html" rel="bookmark"
+     title="Permalink to Movie review classification - Part 2">
+    Movie review classification - Part 2
+  </a>
+</h1><div class="article-header-info">
+  <p>
+      Posted by <a href="/author/maxime-kan.html">Maxime Kan</a>
+    in 
+    <a href="/category/posts.html">
+      posts</a>
+    &nbsp;&nbsp;
+  </p>
+</div> <!-- /.article-header-info -->  </header>
+  <div class="content-body" itemprop="text articleBody">
+	<style type="text/css">/*!
 *
 * IPython notebook
 *
@@ -1148,45 +1196,7 @@ h6:hover .anchor-link {
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
 .highlight .vm { color: #19177C } /* Name.Variable.Magic */
-.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style>
-<style type="text/css">
-/* Temporary definitions which will become obsolete with Notebook release 5.0 */
-.ansi-black-fg { color: #3E424D; }
-.ansi-black-bg { background-color: #3E424D; }
-.ansi-black-intense-fg { color: #282C36; }
-.ansi-black-intense-bg { background-color: #282C36; }
-.ansi-red-fg { color: #E75C58; }
-.ansi-red-bg { background-color: #E75C58; }
-.ansi-red-intense-fg { color: #B22B31; }
-.ansi-red-intense-bg { background-color: #B22B31; }
-.ansi-green-fg { color: #00A250; }
-.ansi-green-bg { background-color: #00A250; }
-.ansi-green-intense-fg { color: #007427; }
-.ansi-green-intense-bg { background-color: #007427; }
-.ansi-yellow-fg { color: #DDB62B; }
-.ansi-yellow-bg { background-color: #DDB62B; }
-.ansi-yellow-intense-fg { color: #B27D12; }
-.ansi-yellow-intense-bg { background-color: #B27D12; }
-.ansi-blue-fg { color: #208FFB; }
-.ansi-blue-bg { background-color: #208FFB; }
-.ansi-blue-intense-fg { color: #0065CA; }
-.ansi-blue-intense-bg { background-color: #0065CA; }
-.ansi-magenta-fg { color: #D160C4; }
-.ansi-magenta-bg { background-color: #D160C4; }
-.ansi-magenta-intense-fg { color: #A03196; }
-.ansi-magenta-intense-bg { background-color: #A03196; }
-.ansi-cyan-fg { color: #60C6C8; }
-.ansi-cyan-bg { background-color: #60C6C8; }
-.ansi-cyan-intense-fg { color: #258F8F; }
-.ansi-cyan-intense-bg { background-color: #258F8F; }
-.ansi-white-fg { color: #C5C1B4; }
-.ansi-white-bg { background-color: #C5C1B4; }
-.ansi-white-intense-fg { color: #A1A6B2; }
-.ansi-white-intense-bg { background-color: #A1A6B2; }
-
-.ansi-bold { font-weight: bold; }
-</style>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+.highlight .il { color: #666666 } /* Literal.Number.Integer.Long */</style><div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="IMDB-movie-reviews-classification---Part-2">IMDB movie reviews classification - Part 2<a class="anchor-link" href="#IMDB-movie-reviews-classification---Part-2">&#182;</a></h1>
@@ -1222,10 +1232,10 @@ h6:hover .anchor-link {
 
 <span class="kn">import</span> <span class="nn">gensim.downloader</span> <span class="k">as</span> <span class="nn">api</span>
 
-<span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="k">import</span> <span class="n">imdb</span>
-<span class="kn">from</span> <span class="nn">keras.preprocessing.sequence</span> <span class="k">import</span> <span class="n">pad_sequences</span>
-<span class="kn">from</span> <span class="nn">keras</span> <span class="k">import</span> <span class="n">Sequential</span>
-<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="k">import</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Embedding</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">GlobalAveragePooling1D</span><span class="p">,</span> <span class="n">GlobalMaxPooling1D</span><span class="p">,</span> <span class="n">GRU</span><span class="p">,</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">MaxPooling1D</span>
+<span class="kn">from</span> <span class="nn">keras.datasets</span> <span class="kn">import</span> <span class="n">imdb</span>
+<span class="kn">from</span> <span class="nn">keras.preprocessing.sequence</span> <span class="kn">import</span> <span class="n">pad_sequences</span>
+<span class="kn">from</span> <span class="nn">keras</span> <span class="kn">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers</span> <span class="kn">import</span> <span class="n">Conv1D</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Embedding</span><span class="p">,</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">GlobalAveragePooling1D</span><span class="p">,</span> <span class="n">GlobalMaxPooling1D</span><span class="p">,</span> <span class="n">GRU</span><span class="p">,</span> <span class="n">LSTM</span><span class="p">,</span> <span class="n">MaxPooling1D</span>
 </pre></div>
 
     </div>
@@ -1346,7 +1356,7 @@ Downloading data from https://s3.amazonaws.com/text-datasets/imdb_word_index.jso
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_to_index</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">key</span><span class="p">,(</span><span class="n">value</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">word_to_index</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_to_index</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">key</span><span class="p">,</span> <span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">3</span><span class="p">))</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">word_to_index</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span> 
 <span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;PAD&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">word_to_index</span><span class="p">[</span><span class="s2">&quot;&lt;UNK&gt;&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># unknown</span>
@@ -1355,7 +1365,7 @@ Downloading data from https://s3.amazonaws.com/text-datasets/imdb_word_index.jso
 <span class="n">index_to_word</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([(</span><span class="n">value</span><span class="p">,</span> <span class="n">key</span><span class="p">)</span> <span class="k">for</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> <span class="ow">in</span> <span class="n">word_to_index</span><span class="o">.</span><span class="n">items</span><span class="p">()])</span>
 
 <span class="k">def</span> <span class="nf">to_words</span><span class="p">(</span><span class="n">review</span><span class="p">):</span>
-  <span class="k">return</span> <span class="p">[</span><span class="n">index_to_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">review</span><span class="p">]</span>
+    <span class="k">return</span> <span class="p">[</span><span class="n">index_to_word</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">review</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -1368,8 +1378,8 @@ Downloading data from https://s3.amazonaws.com/text-datasets/imdb_word_index.jso
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;label: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">train_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;review: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_words</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;label: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">train_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;review: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">to_words</span><span class="p">(</span><span class="n">train_data</span><span class="p">[</span><span class="mi">0</span><span class="p">])))</span>
 </pre></div>
 
     </div>
@@ -1399,8 +1409,8 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Padding">Padding<a class="anchor-link" href="#Padding">&#182;</a></h3><p>Don't be upset about all the UNK tags that you can see, this is just because we limited the vocabulary size to 3000 when we loaded the data. UNK basically means that it would have been a rare word or a name (there are lots of actors names in the reviews as you can imagine).</p>
-<p>The data exploration part done in the previous post had shown us that the length of the reviews are varying a lot. This is an issue for the algorithms we want to use here, as they need all text inputs to have the same number of words. We can get around this issue thanks to padding. Padding essentially just ensures each list of tokens has the same length by either truncating or adding 0's at the end of the review. Note that 0 corresponds to 'PAD' in the word_to_index dictionary we have defined above!</p>
+<h3 id="Padding">Padding<a class="anchor-link" href="#Padding">&#182;</a></h3><p>Don"t be upset about all the UNK tags that you can see, this is just because we limited the vocabulary size to 3000 when we loaded the data. UNK basically means that it would have been a rare word or a name (there are lots of actors names in the reviews as you can imagine).</p>
+<p>The data exploration part done in the previous post had shown us that the length of the reviews are varying a lot. This is an issue for the algorithms we want to use here, as they need all text inputs to have the same number of words. We can get around this issue thanks to padding. Padding essentially just ensures each list of tokens has the same length by either truncating or adding 0"s at the end of the review. Note that 0 corresponds to "PAD" in the word_to_index dictionary we have defined above!</p>
 <p>When using the bag of words in our previous post, we restrained ourselves to the first 500 words. To ensure a fair comparison, let us use padding here with the same cap.</p>
 
 </div>
@@ -1413,8 +1423,8 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">max_len</span> <span class="o">=</span> <span class="mi">500</span>
 
-<span class="n">train_data_padded</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">)</span>
-<span class="n">test_data_padded</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">)</span>
+<span class="n">train_data_padded</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;pre&quot;</span><span class="p">)</span>
+<span class="n">test_data_padded</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;pre&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1425,7 +1435,7 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Now we're all set for the modeling part!</p>
+<p>Now we"re all set for the modeling part!</p>
 
 </div>
 </div>
@@ -1504,10 +1514,10 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_base</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 <span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_len</span><span class="p">,)))</span>
 <span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GlobalAveragePooling1D</span><span class="p">())</span>
-<span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
-<span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
-<span class="n">model_base</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
+<span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">model_base</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">))</span>
+<span class="n">model_base</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="s2">&quot;binary_crossentropy&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
 <span class="n">model_base</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
@@ -1525,13 +1535,7 @@ review: &lt;START&gt; this film was just brilliant casting location scenery stor
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Colocations handled automatically by placer.
-WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/keras/backend/tensorflow_backend.py:3445: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-_________________________________________________________________
+<pre>_________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
 embedding_1 (Embedding)      (None, 500, 50)           150000    
@@ -1569,7 +1573,9 @@ _________________________________________________________________
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model_base</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data_padded</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">validation_split</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model_base</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_data_padded</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.25</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -1586,10 +1592,7 @@ _________________________________________________________________
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>WARNING:tensorflow:From /usr/local/lib/python3.6/dist-packages/tensorflow/python/ops/math_ops.py:3066: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use tf.cast instead.
-Train on 18750 samples, validate on 6250 samples
+<pre>Train on 18750 samples, validate on 6250 samples
 Epoch 1/10
 18750/18750 [==============================] - 4s 204us/step - loss: 0.6791 - acc: 0.5996 - val_loss: 0.6292 - val_acc: 0.7475
 Epoch 2/10
@@ -1624,13 +1627,14 @@ Epoch 10/10
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;acc&#39;</span><span class="p">,</span> <span class="s1">&#39;val_acc&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span> <span class="s2">&quot;val_acc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;loss&#39;</span><span class="p">,</span> <span class="s1">&#39;val_loss&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;loss&quot;</span><span class="p">,</span> <span class="s2">&quot;val_loss&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Accuracy and loss on the training and validation set&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -2277,7 +2281,7 @@ aZ8AAAAASUVORK5CYII=
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>We achieve around 88% accuracy on the validation score with this method. Neat isn't it? We already outperformed the linear model from the previous step a bit!</p>
+<p>We achieve around 88% accuracy on the validation score with this method. Neat isn"t it? We already outperformed the linear model from the previous step a bit!</p>
 <p>Yes, but does this model work any better than our previous linear model when it comes to retrieving semantics? Let us have a look at this example we discussed before:</p>
 
 </div>
@@ -2302,7 +2306,11 @@ aZ8AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reviews_data</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">word_to_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">([</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">])</span><span class="o">+</span><span class="n">review</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">]),</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">reviews_data</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">word_to_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">([</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">])</span> <span class="o">+</span> <span class="n">review</span><span class="o">.</span><span class="n">split</span><span class="p">()]</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">reviews</span><span class="p">]),</span>
+    <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;pre&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2363,7 +2371,7 @@ aZ8AAAAASUVORK5CYII=
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>As stated above, another option is to use embeddings that would be computed before feeding the reviews to our neural network. A popular option is to use the GloVe embeddings (<a href = "https://nlp.stanford.edu/projects/glove/">Global Vector for Word Representation</a>), which have been trained on Wikipedia articles (among others).</p>
-<p>It's quite easy to do, especially thanks to the gensim library that also allows to do a lot of cool stuff as we'll see below.</p>
+<p>It"s quite easy to do, especially thanks to the gensim library that also allows to do a lot of cool stuff as we"ll see below.</p>
 
 </div>
 </div>
@@ -2412,7 +2420,7 @@ aZ8AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_vectors</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s2">&quot;movie&quot;</span><span class="p">,</span> <span class="n">topn</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_vectors</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s2">&quot;movie&quot;</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2422,18 +2430,6 @@ aZ8AAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
-  if np.issubdtype(vec.dtype, np.int):
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -2483,18 +2479,6 @@ aZ8AAAAASUVORK5CYII=
 
 <div class="output_area">
 
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>/usr/local/lib/python3.6/dist-packages/gensim/matutils.py:737: FutureWarning: Conversion of the second argument of issubdtype from `int` to `np.signedinteger` is deprecated. In future, it will be treated as `np.int64 == np.dtype(int).type`.
-  if np.issubdtype(vec.dtype, np.int):
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
     <div class="prompt output_prompt">Out[16]:</div>
 
 
@@ -2514,7 +2498,7 @@ aZ8AAAAASUVORK5CYII=
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Yes it can! It correctly identified "castle" as being the outlier here. How did it do that? Simply by computing the average embedding of my review and by identifying that "castle" had the smallest cosine score (smallest similiarity) with this average. Nice!</p>
-<p>Going a little further, there is another gensim feature that people love to play with... it's the famous "what word c is to word d what word a is to word b" question! For instance, Moscow is to Russia what Paris is to France. Let us try this out with the following example: suppose we are interested to know what the equivalent of man-actor relationship is for a woman...</p>
+<p>Going a little further, there is another gensim feature that people love to play with... it"s the famous "what word c is to word d what word a is to word b" question! For instance, Moscow is to Russia what Paris is to France. Let us try this out with the following example: suppose we are interested to know what the equivalent of man-actor relationship is for a woman...</p>
 
 </div>
 </div>
@@ -2524,7 +2508,7 @@ aZ8AAAAASUVORK5CYII=
 <div class="prompt input_prompt">In&nbsp;[17]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_vectors</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;actor&#39;</span><span class="p">,</span><span class="s1">&#39;woman&#39;</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;man&#39;</span><span class="p">],</span> <span class="n">topn</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">word_vectors</span><span class="o">.</span><span class="n">most_similar_cosmul</span><span class="p">(</span><span class="n">positive</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;actor&quot;</span><span class="p">,</span><span class="s2">&quot;woman&quot;</span><span class="p">],</span> <span class="n">negative</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;man&quot;</span><span class="p">],</span> <span class="n">topn</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2600,12 +2584,12 @@ aZ8AAAAASUVORK5CYII=
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_with_embeddings</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="n">embedding_matrix</span><span class="p">],</span> <span class="n">trainable</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_len</span><span class="p">,)))</span>
+<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">weights</span><span class="o">=</span><span class="p">[</span><span class="n">embedding_matrix</span><span class="p">],</span> <span class="n">trainable</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_len</span><span class="p">,)))</span>
 <span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GlobalAveragePooling1D</span><span class="p">())</span>
-<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
 <span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
-<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">))</span>
+<span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="s2">&quot;binary_crossentropy&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;accuracy&quot;</span><span class="p">])</span>
 <span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
@@ -2661,7 +2645,9 @@ _________________________________________________________________
 <div class="prompt input_prompt">In&nbsp;[20]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data_padded</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="n">validation_split</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model_with_embeddings</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+    <span class="n">train_data_padded</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">epochs</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">128</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.25</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2771,17 +2757,17 @@ Epoch 10/10
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">model_cnn</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
 <span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Embedding</span><span class="p">(</span><span class="n">vocab_size</span><span class="p">,</span> <span class="n">embedding_size</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="n">max_len</span><span class="p">,)))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
 <span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling1D</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span> <span class="o">=</span> <span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Conv1D</span><span class="p">(</span><span class="n">filters</span><span class="o">=</span><span class="mi">256</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
 <span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">MaxPooling1D</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Flatten</span><span class="p">())</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span> <span class="o">=</span> <span class="s1">&#39;relu&#39;</span><span class="p">))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s1">&#39;sigmoid&#39;</span><span class="p">))</span>
-<span class="n">model_cnn</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s1">&#39;adam&#39;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;acc&#39;</span><span class="p">])</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;relu&quot;</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dropout</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mf">0.5</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="s2">&quot;sigmoid&quot;</span><span class="p">))</span>
+<span class="n">model_cnn</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="s2">&quot;adam&quot;</span><span class="p">,</span> <span class="n">loss</span><span class="o">=</span><span class="s2">&quot;binary_crossentropy&quot;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;acc&quot;</span><span class="p">])</span>
 <span class="n">model_cnn</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
 </pre></div>
 
@@ -2849,7 +2835,7 @@ _________________________________________________________________
 <div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model_cnn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data_padded</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">history</span> <span class="o">=</span> <span class="n">model_cnn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data_padded</span><span class="p">,</span> <span class="n">train_labels</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">validation_split</span><span class="o">=</span><span class="mf">0.25</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -2895,13 +2881,14 @@ Epoch 3/3
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">history</span><span class="o">.</span><span class="n">history</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;acc&#39;</span><span class="p">,</span> <span class="s1">&#39;val_acc&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;acc&quot;</span><span class="p">,</span> <span class="s2">&quot;val_acc&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;accuracy&quot;</span><span class="p">)</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
-<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;loss&#39;</span><span class="p">,</span> <span class="s1">&#39;val_loss&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[[</span><span class="s2">&quot;loss&quot;</span><span class="p">,</span> <span class="s2">&quot;val_loss&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">linestyle</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;loss&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Accuracy and loss on the training and validation set&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -3706,7 +3693,7 @@ Our CNN achieves a 0.88 accuracy on the test set
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>a) A review of Notorious (Alfred Hitchcock, 1946) by From Frank Cottrell Boyce, The Guardian 2012 (<a href = "https://www.theguardian.com/film/2012/jun/17/my-favourite-hitchcock-film-notorious-frank-cottrell-boyce">full review here</a>)</p>
-<p>"Notorious is perfect. Everyone knows that. It's a testament to Ben Hecht's complex, headlong script that so many people have tried to rip it off and a testament to Hitchcock's genius that no one has ever succeeded. Take a look at the gabby, inconsequential, forgotten Mission Impossible: II and you'll see what I mean. The more obvious glories of Notorious include a revelatory performance from Cary Grant as the morally exhausted American agent Devlin, a terrifying Nazi-mother super-villain played by Leopoldine Konstantin and cinema's most cunningly prolonged kiss."</p>
+<p>"Notorious is perfect. Everyone knows that. It"s a testament to Ben Hecht"s complex, headlong script that so many people have tried to rip it off and a testament to Hitchcock"s genius that no one has ever succeeded. Take a look at the gabby, inconsequential, forgotten Mission Impossible: II and you"ll see what I mean. The more obvious glories of Notorious include a revelatory performance from Cary Grant as the morally exhausted American agent Devlin, a terrifying Nazi-mother super-villain played by Leopoldine Konstantin and cinema"s most cunningly prolonged kiss."</p>
 <p>b) A review of Vertigo (Alfred Hitchcock, 1958) by Peter Bradshaw, The Guardian 2018 (<a href = "https://www.theguardian.com/film/2018/jul/12/vertigo-review-alfred-hitchcock-james-stewart-kim-novak">full review here</a>)</p>
 <p>"When I watched this again, I felt more strongly than ever that Hitchcock’s decision to give us a story in which the Clouzot-esque twist is given away well before the end is no misjudgment. It is a brilliant way of putting us inside Judy’s tormented, guilty soul, and of avoiding, just for a while, that male gaze. I also realised what it is Vertigo has been subtly reminding me of for many years: Graham Greene’s The End of the Affair. A treat to see this back on the big screen."</p>
 
@@ -3718,7 +3705,7 @@ Our CNN achieves a 0.88 accuracy on the test set
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notorious_review</span> <span class="o">=</span> <span class="s2">&quot;Notorious is perfect. Everyone knows that. It&#39;s a testament to Ben Hecht&#39;s complex, headlong script that so many people have tried to rip it off and a testament to Hitchcock&#39;s genius that no one has ever succeeded. Take a look at the gabby, inconsequential, forgotten Mission Impossible: II and you&#39;ll see what I mean. The more obvious glories of Notorious include a revelatory performance from Cary Grant as the morally exhausted American agent Devlin, a terrifying Nazi-mother super-villain played by Leopoldine Konstantin and cinema&#39;s most cunningly prolonged kiss.&quot;</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">notorious_review</span> <span class="o">=</span> <span class="s2">&quot;Notorious is perfect. Everyone knows that. It&quot;</span><span class="n">s</span> <span class="n">a</span> <span class="n">testament</span> <span class="n">to</span> <span class="n">Ben</span> <span class="n">Hecht</span><span class="s2">&quot;s complex, headlong script that so many people have tried to rip it off and a testament to Hitchcock&quot;</span><span class="n">s</span> <span class="n">genius</span> <span class="n">that</span> <span class="n">no</span> <span class="n">one</span> <span class="n">has</span> <span class="n">ever</span> <span class="n">succeeded</span><span class="o">.</span> <span class="n">Take</span> <span class="n">a</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="n">gabby</span><span class="p">,</span> <span class="n">inconsequential</span><span class="p">,</span> <span class="n">forgotten</span> <span class="n">Mission</span> <span class="n">Impossible</span><span class="p">:</span> <span class="n">II</span> <span class="ow">and</span> <span class="n">you</span><span class="s2">&quot;ll see what I mean. The more obvious glories of Notorious include a revelatory performance from Cary Grant as the morally exhausted American agent Devlin, a terrifying Nazi-mother super-villain played by Leopoldine Konstantin and cinema&quot;</span><span class="n">s</span> <span class="n">most</span> <span class="n">cunningly</span> <span class="n">prolonged</span> <span class="n">kiss</span><span class="o">.</span><span class="s2">&quot;</span>
 <span class="n">vertigo_review</span> <span class="o">=</span> <span class="s2">&quot;When I watched this again, I felt more strongly than ever that Hitchcock’s decision to give us a story in which the Clouzot-esque twist is given away well before the end is no misjudgment. It is a brilliant way of putting us inside Judy’s tormented, guilty soul, and of avoiding, just for a while, that male gaze. I also realised what it is Vertigo has been subtly reminding me of for many years: Graham Greene’s The End of the Affair. A treat to see this back on the big screen.&quot;</span>
 </pre></div>
 
@@ -3741,7 +3728,7 @@ Our CNN achieves a 0.88 accuracy on the test set
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">hitchcock_reviews</span> <span class="o">=</span> <span class="p">[</span><span class="n">notorious_review</span><span class="p">,</span> <span class="n">vertigo_review</span><span class="p">]</span>
-<span class="n">hitchcock_reviews</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">review</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">hitchcock_reviews</span><span class="p">]</span>
+<span class="n">hitchcock_reviews</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">ch</span> <span class="k">for</span> <span class="n">ch</span> <span class="ow">in</span> <span class="n">review</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">if</span> <span class="n">ch</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">punctuation</span><span class="p">)</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">hitchcock_reviews</span><span class="p">]</span>
 </pre></div>
 
     </div>
@@ -3754,7 +3741,11 @@ Our CNN achieves a 0.88 accuracy on the test set
 <div class="prompt input_prompt">In&nbsp;[0]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hitchcock_reviews_transformed</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">word_to_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">([</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">])</span><span class="o">+</span><span class="n">review</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_to_index</span><span class="p">]</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">hitchcock_reviews</span><span class="p">]),</span> <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="s1">&#39;pre&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hitchcock_reviews_transformed</span> <span class="o">=</span> <span class="n">pad_sequences</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="n">word_to_index</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">([</span><span class="s2">&quot;&lt;START&gt;&quot;</span><span class="p">])</span><span class="o">+</span><span class="n">review</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">word_to_index</span><span class="p">]</span> <span class="k">for</span> <span class="n">review</span> <span class="ow">in</span> <span class="n">hitchcock_reviews</span><span class="p">]),</span>
+    <span class="n">maxlen</span><span class="o">=</span><span class="n">max_len</span><span class="p">,</span>
+    <span class="n">padding</span><span class="o">=</span><span class="s2">&quot;pre&quot;</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -3808,7 +3799,7 @@ Our CNN achieves a 0.88 accuracy on the test set
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="6.-Conclusion">6. Conclusion<a class="anchor-link" href="#6.-Conclusion">&#182;</a></h2><p>In this post, we achieved an accuracy of 88% for movie reviews classification using Convolutional Neural Networks (CNN). The use of Convolutional Neural Networks enables to increase the accuracy of movie reviews classification through a transformation from words to embeddings and through a scanning of these embeddings. Thus, the sequential nature of sentences is preserved, which was one of the main drawbacks of the Bag-of-words approach we analyzed in the previous post.</p>
-<p>CNN's also have the advantage that they can be trained quite quickly for such tasks. This advantage becomes very relevant when compared to other popular models for Natural Language Processing like RNN's.</p>
+<p>CNN"s also have the advantage that they can be trained quite quickly for such tasks. This advantage becomes very relevant when compared to other popular models for Natural Language Processing like RNN"s.</p>
 
 </div>
 </div>
@@ -3845,38 +3836,36 @@ Our CNN achieves a 0.88 accuracy on the test set
 }
 </script>
 
-    </div><!-- /.entry-content -->
+  </div>
+  
 
-  </article>
-</section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://MaximeKan.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+</article>
+        </div><!-- /content -->
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+    </div><!--/.container /#main-container -->
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+    <footer id="site-footer">
+ 
+      <address id="site-colophon">
+        <p class="text-center text-muted">
+        Site built using <a href="http://getpelican.com/" target="_blank">Pelican</a>
+        &nbsp;&bull;&nbsp; Theme based on
+        <a href="http://www.voidynullness.net/page/voidy-bootstrap-pelican-theme/"
+           target="_blank">VoidyBootstrap</a> by 
+        <a href="http://www.robertiwancz.com/"
+           target="_blank">RKI</a>  
+        </p>
+      </address><!-- /colophon  -->
+    </footer>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
 
-</body>
+    <!-- javascript -->
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+
+  </body>
 </html>

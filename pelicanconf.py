@@ -23,11 +23,11 @@ AUTHOR_FEED_RSS = None
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
          ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+         ('tags', '/tags.html'))
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('GitHub', 'https://github.com/MaximeKan'),
+          ('StackOverflow', 'https://stackoverflow.com/users/10956606/maximekan?tab=profile'),)
 
 DEFAULT_PAGINATION = 10
 
@@ -38,3 +38,13 @@ MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
+#PLUGINS = ['ipynb.markup', 'i18n_subsites']
+
+#CUSTOM_ARTICLE_FOOTERS = ("taglist.html")
+
+THEME = '/Users/maxime/Movies_DS/pelican-themes/voidy-bootstrap' #fresh is also good
+#JINJA_ENVIRONMENT = {
+#    'extensions': ['jinja2.ext.i18n'],
+#}
+#THEME = 'notmyidea'
+#THEME = '/Users/maxime/Movies_DS/pelican-themes/notmyidea-cms'
